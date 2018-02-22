@@ -1,0 +1,101 @@
+/* CSS Document for Screens */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700);
+
+body { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 300; color: #555; margin: 0; padding: 0; }
+
+#page { max-width: 1200px; margin: 0 auto; position: relative; }
+
+/* Text */
+
+h1 { margin: 0 0 1em 0; font-size: 2.8em; font-weight: 700; }
+h2 { margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em; }
+h3 { margin: 0 0 .5em 0; font-size: 1.3em; font-weight: 700; }
+h4 { margin: 0 0 1.5em 0; font-size: 1em; font-weight: 700; }
+
+p { margin: 0 0 1em 0; }
+
+a { color: #0073ff; }
+a:visited { color: #65b1ff; }
+
+a.btn { font-size: 1.2em; text-decoration: none; color: #fff; border: 1px solid #fff; padding: 4px 15px; transition: background-color .5s; }
+a.btn:hover { background-color: rgba(0,0,0,.3); }
+	
+/* Header */
+
+header { height: 600px; background: #817879 url(imgs/EtapaActual.png) no-repeat center bottom; position: relative; }
+
+header a.logo {
+	position: absolute;
+	display: block; width: 160px; height: 66px;
+	background: url(imgs/logo.png) no-repeat 0 0; background-size: contain;
+	top: 10px; left: 75px;
+}
+header a.logo span { display: none; }
+
+header div.hero { position: absolute; width: 30%; top: 130px; left: 65%; }
+header div.hero h1 { line-height:1em; margin: 0 0 30px 0; color: #fff; }
+
+/* Section - All */
+
+section { padding: 0 30px; }
+section::after { content:''; display:block; clear: both; }
+
+/* Section - Main */
+
+section.main { margin-top: 20px; margin-bottom: 30px; padding: 0; }
+section.main aside { width: 33%; float: left; text-align: center; }
+
+section.main .content { margin: 15px; background: no-repeat center top; background-size: 75px 75px; padding-top: 85px; }
+
+section.main aside h3 a { color: #000; text-decoration: none; }
+section.main aside h3 a:hover { text-decoration: underline; }
+
+section.main aside .content.inscripciones { background-image: url(imgs/icon_one.png); }
+section.main aside .content.avisos { background-image: url(imgs/icon_two.png); }
+section.main aside .content.descargas { background-image: url(imgs/icon_three.png); }
+
+/* Footer */
+
+footer { font-size: .8em; margin: 40px; color: #999; }
+
+footer .content { display: inline; }
+
+footer a { margin-left: 30px; color: #777; }
+footer a :visited { color: #777; }
+footer a :hover { color: #000; }
+
+/* Media Queries */
+
+@media screen and (max-width: 1000px) {
+	
+	h1 { font-size: 2.4em; }
+	
+	/* Header */
+	header div.hero { left: 56%; }
+	header div.hero h1 { margin-bottom: 20px; }
+	
+}
+
+@media screen and (max-width: 625px) {
+	
+	h1 { font-size: 1em; }
+	h3 { margin-bottom: 0px; }
+	a.btn { font-size: .9em; }
+	
+	/* Header */
+	header { height: 160px; background-image: url(imgs/EtapaActual50.png); background-position: left top; }
+	header a.logo {
+		width: 100%; height: 66px;
+		left: 0px; top: 0px;
+		background-size: 60px 30px;
+	}
+
+	/* Footer */
+	footer { font-size: .6em; margin: 0px;}
+
+	footer  a { margin-left: 0px; }
+	
+}
+
+

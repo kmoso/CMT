@@ -1,0 +1,216 @@
+/* CSS Document for Screens */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700);
+
+body { 
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 16px; 
+	font-weight: 300; 
+	margin: 0; 
+	padding: 0;
+	background: #ccc9c9 url(imgs/EtapaActual.png) no-repeat center top; 
+}
+
+#page { max-width: 1200px; margin: 0 auto; position: relative; }
+
+/* Login */
+
+div.login-block {
+	width: 320px;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	border: 3px solid #53595c;
+	margin: 10px auto;
+}
+
+div.login-block h1 {
+	text-align: center;
+	color: #000;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+div.login-block input {
+	height: 42px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ffff99;
+	margin-bottom: 20px;
+	font-size: 14px;
+	padding: 0 20px 0 50px;
+	outline: none;
+}
+
+div.login-block button {
+	width: 50%;
+	height: 40px;
+	background: #252525;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #e15960;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-family: Montserrat;
+	outline: none;
+	cursor: pointer;	
+}
+
+/* Text */
+
+.mensaje {
+	margin: 0 auto;
+	padding: 30px 0 0 0;
+	color: yellow; 
+	font-weight: bold; 
+}
+
+.main_grid {
+	margin: 0 auto;
+	width: 1200px;
+	height: 485px;
+	overflow-x: auto; 
+	overflow-y: auto; 
+}
+
+/* Header */
+
+header a.exit {
+	z-index: 1;
+	position: absolute;
+	display: block; width: 40px; height: 40px;
+	background: url(imgs/icon_exit.png) no-repeat 0 0; background-size: contain;
+	top: 10px; left: 55px;
+}
+
+/* Tables */
+
+table.inscripcion {
+	margin: 0 auto;
+	width: 600px;
+	font-weight: bold; 
+	font-size: 1.5em;
+}
+
+table tr.encabezado { font-weight: bold; font-size: 1.5em; }
+
+table.seleccion { margin: 0 auto; padding: 45px 0 0 0;}
+
+table.edit_grid {
+	margin: 0 auto;
+	width: 600px;
+	background: #252525;
+	color: #fff; 
+    border-radius: 2px;
+    border: solid #fff;
+}
+
+table.grid {
+	margin: 0 auto;
+	width: 1200px;
+	background: #252525;
+	color: #fff; 
+    border-radius: 2px;
+    border: solid #fff;
+}
+
+table.medium_grid {
+	margin: 0 auto;
+	width: 600px;
+	background: #252525;
+	color: #fff; 
+    border-radius: 2px;
+    border: solid #fff;
+}
+
+table.small_grid {
+	margin: 0 auto;
+	width: 300px;
+	background: #252525;
+	color: #fff; 
+    border-radius: 2px;
+    border: solid #fff;
+}
+
+tr.grid0{
+	color:#fff!important;
+    font-size: small;
+}
+
+tr.grid1{
+	color:#ffff99!important;
+    font-size: small;
+}
+
+td.button {
+	text-align: right;
+}
+
+/* Navigation */
+
+nav {
+	position: absolute;
+	top: 0px; left: 0px;
+	padding: 10px 0 0 0;
+	width: 100%;
+}
+
+nav::after { content:''; display: block; clear; both; }
+
+nav ul { list-style: none; margin: 0; padding: 0px; }
+
+nav ul li:hover { background-color: #2b0306; }
+nav ul li:hover  > ul { display: block; }
+
+nav ul li a {
+	display: inline-block;
+	color: #fff;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-weight: bold;
+	width: 125px;
+	position: relative;
+}
+
+nav ul li a:visited { color: #fff; }
+
+nav ul li a:hover  { background-color: #6d0911; }
+
+nav ul ul { position: absolute; top: 100%; background-color: #2b0306; display: none; }
+
+nav ul ul li { position: relative; }
+
+nav ul ul ul { left: 100%; top: 0px; }
+
+/* top-level */
+nav > ul  { padding-left: 200px; }
+nav > ul > li { float: left; }
+nav > ul > li > a { width: auto; padding: 10px 20px 15px 20px; }
+
+nav a[aria-haspopup="true"]::after {
+	content: '';
+	display: block; width: 0px; height: 0px;
+	position: absolute;
+	top: 16px; right: 15px;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	border-left: 4px solid #fff;
+}
+
+nav > ul > li > a[aria-haspopup="true"]::after {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #fff;
+	left: 20px; right: auto;
+	bottom: 6px; top: auto;
+}
+
+/* Footer */
+
+
+/* Media Queries */
+
