@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.0" method="upgrade">
+	<name>Cobalt - Package - All</name>
+	<packagename>cobaltpack</packagename>
+	<version>8.725</version>
+	<url>http://www.mintjoomla.com</url>
+	<packager>MintJoomla</packager>
+	<packagerurl>http://www.mintjoomla.com</packagerurl>
+	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
+	<description><![CDATA[
+		<div class="hero-unit" style="text-align: left;">
+			<h1>Cobalt 8 CCK <small><b>Mint</b>Joomla</small></h1>
+			<p>Cobalt 8 is a great extension to aid in the design of components and content for your site.
+			You can use it to create hundreds of different sections of your site.</p>
+			<br>
+			<a href="http://www.mintjoomla.com/downloads/category-items/4-downloads/9-cobalt-7.html" target="_blank" class="btn btn-large btn-primary">Get more stuff by MintJoomla</a>
+			<a href="http://www.mintjoomla.com/community/depot.html" target="_blank" class="btn btn-large">Get more stuff by 3<sup>rd</sup> party</a>
+		</div>
+		<p class="alert alert-error">Do not forget to download and install <a target="_blank" href="http://www.mintjoomla.com/downloads/item/9-cobalt-7/101-mint-media-pack.html">Cobalt Media Pack</a>.</p>
+		<div class="well" style="text-align:left;">
+			<h2>You have successfully installed!</h2>
+			<ul>
+				<li>Cobalt 8 Extension</li>
+				<li>MintJoomla library</li>
+			</ul>
+			<ul>
+				<li>Module Tag Cloud</li>
+				<li>Module Categories</li>
+				<li>Module Section Statictics</li>
+			</ul>
+			<ul>
+				<li>Payment Gateway PayPal</li>
+			</ul>
+			<ul>
+				<li>Plugin Toolset</li>
+				<li>Plugin Joomla Search</li>
+				<li>Plugin Formatter INI</li>
+				<li>Plugin Formatter XML</li>
+			</ul>
+			<ul>
+				<li>Comment Adapter Core</li>
+				<li>Comment Adapter JComment</li>
+				<li>Comment Adapter <a href="http://stackideas.com/komento.html">Komento (By Stackideas)</a></li>
+			</ul>
+			<ul>
+				<li>Field Boolean</li>
+				<li>Field Checkbox</li>
+				<li>Field HTML</li>
+				<li>Field Image</li>
+				<li>Field Multiple Select</li>
+				<li>Field Password</li>
+				<li>Field Radio</li>
+				<li>Field Select</li>
+				<li>Field Text</li>
+				<li>Field Textarea</li>
+			</ul>
+
+			<h2>What is next?</h2>
+			<ul>
+				<li><a href="http://www.mintjoomla.com/community/knowledge/user-item/43-sergey/109-cobalt-quick-start.html" target="_blank">Read and watch quick start tutorial</a></li>
+				<li><a href="http://support.mintjoomla.com" target="_blank">Ask questions and get support</a></li>
+				<li><a href="http://www.mintjoomla.com/blog.html" target="_blank">We release updates every week. Please do not forget to subscribe or check our blog were we announce.</a></li>
+			</ul>
+		</div>
+		<br><br>
+	]]></description>
+
+	<files folder="package">
+		<file type="file" id="mint">uploads_dir.zip</file>
+		<file type="component" id="com_cobalt">com_cobalt.j3.v.8.725.zip</file>
+		<file type="library" id="mint">pkg_mint.j3.libraries.v.8.109.zip</file>
+		<file type="module" id="mod_cobalt_category">mod_cobalt_category.j3.v.8.43.zip</file>
+		<file type="module" id="mod_cobalt_sectionstatistics">mod_cobalt_sectionstatistics.j3.v.8.28.zip</file>
+		<file type="module" id="mod_cobalt_tagcloud">mod_cobalt_tagcloud.j3.v.8.40.zip</file>
+		<file type="plugin" id="mint">plg_cobalt.mint.formatter_ini.j3.v.8.21.zip</file>
+		<file type="plugin" id="mint">plg_cobalt.mint.formatter_xml.j3.v.8.24.zip</file>
+		<file type="plugin" id="kunena2forum">plg_cobalt.mint.kunena2forum.j3.v.8.7.zip</file>
+		<file type="plugin" id="toolset">plg_cobalt.mint.toolset.j3.v.8.46.zip</file>
+		<file type="plugin" id="cobalt">plg_cobalt.search.cobalt.j3.v.8.14.zip</file>
+		<file type="file" id="mint">cmt_cobalt.j3.ccomment.v.8.1.zip</file>
+		<file type="file" id="mint">cmt_cobalt.j3.core.v.8.13.zip</file>
+		<file type="file" id="mint">cmt_cobalt.j3.jcomment.v.8.11.zip</file>
+		<file type="file" id="mint">cmt_cobalt.j3.komento.v.8.18.zip</file>
+		<file type="file" id="mint">payment_cobalt.j3.paypal.v.8.39.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.boolean.v.8.53.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.checkbox.v.8.67.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.html.v.8.47.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.image.v.8.68.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.j2store.v.8.4.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.multiselect.v.8.44.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.passwd.v.8.26.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.q2c.v.8.2.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.radio.v.8.35.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.select.v.8.37.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.text.v.8.53.zip</file>
+		<file type="file" id="mint">field_cobalt.j3.textarea.v.8.52.zip</file>
+	</files>
+</extension>

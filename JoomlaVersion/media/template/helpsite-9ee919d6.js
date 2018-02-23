@@ -1,0 +1,2 @@
+jQuery(document).ready(function(){jQuery('#helpsite-refresh').click(function()
+{var select_id=jQuery(this).attr('rel');var showDefault=jQuery(this).attr('showDefault');jQuery.getJSON('index.php?option=com_users&task=profile.gethelpsites&format=json',function(data){var items=[];jQuery.each(data,function(key,val){if(val.value!==''||showDefault==='true'){items.push('<option value="'+val.value+'">'+val.text+'</option>');}});jQuery("#"+select_id).empty().append(items).trigger("liszt:updated");});});});

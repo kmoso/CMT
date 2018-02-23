@@ -2,6 +2,8 @@ BotónPayPal.txt
 error_log
 docs/
 imgs/
-JoomlaVersion/
 uploads/
 backup/
+analytics_tracking.php
+dbconfig.php
+JoomlaVersion/tmp/

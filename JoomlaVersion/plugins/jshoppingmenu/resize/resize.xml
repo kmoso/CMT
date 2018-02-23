@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="plugin" method="upgrade" group="jshoppingmenu">
+	<name>JoomShopping Plugin Resize Picture</name>
+	<creationDate>10.07.2011</creationDate>
+	<version>3.2.3</version>
+	<author>MAXXmarketing</author>
+	<authorEmail>marketing@maxx-marketing.net</authorEmail>
+	<authorUrl>http://www.webdesigner-profi.de</authorUrl>
+	<copyright></copyright>
+	<license>2011. MAXXmarketing GmbH. All rights reserved.</license>
+	<description>Resize</description>
+	<files>
+		<filename plugin="resize">resize.php</filename>
+	</files>
+</extension>

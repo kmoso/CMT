@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cobaltfield>
+	<name>Quick2cart</name>
+	<group>Commerce Form Elements</group>
+
+	<config>
+		<fields name="params" addpathfield="/libraries/mint/forms/fields">
+			<fieldset name="tmpl">
+				<field type="filelist" name="template_input" filter="php$" hide_none="1" hide_default="1" directory="/components/com_cobalt/fields/q2c/tmpl/input" label="F_TMPLINPUT" default="default.php" />
+				<field type="filelist" name="template_output_list" filter="php$" hide_none="1" hide_default="1" directory="/components/com_cobalt/fields/q2c/tmpl/output" label="F_TMPLLIST" default="default.php" />
+				<field type="filelist" name="template_output_full" filter="php$" hide_none="1" hide_default="1" directory="/components/com_cobalt/fields/q2c/tmpl/output" label="F_TMPLFULL" default="default.php" />
+			</fieldset>
+			<fieldset name="general" label="FS_GENERAL" description="Q2C_DESCR">
+
+			</fieldset>
+		</fields>
+	</config>
+</cobaltfield>

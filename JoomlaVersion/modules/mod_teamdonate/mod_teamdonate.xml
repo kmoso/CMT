@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+    <name>MOD_TEAMDONATE</name>
+    <author>torbara</author>
+    <creationDate>November 5, 2015</creationDate>
+    <copyright>Copyright (C) 2011, 2013 torbara.com</copyright>
+    <license>GPL v3</license>
+    <authorEmail>support@torbara.com</authorEmail>
+    <authorUrl>http://www.torbara.com</authorUrl>
+    <version>1.0</version>
+    <description>MOD_TEAMDONATE_DESCRIPTION</description>
+
+    <files>
+        <filename module="mod_teandonate">mod_teandonate.php</filename>
+        <folder>css</folder>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                
+                <field name="open_new_window" type="radio" default="1" label="MOD_TEAMDONATE_NEW_WINDOW_LABEL"
+                       description="MOD_TEAMDONATE_NEW_WINDOW_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="return" type="text" size="64" default="http://www.mysite.com/anypage.html"
+                       label="MOD_TEAMDONATE_SUCCESS_RETURN_LABEL" description="MOD_TEAMDONATE_SUCCESS_RETURN_DESC"/>
+                <field name="cancel_return" type="text" size="64" default="http://www.mysite.com/anypage2.html"
+                       label="MOD_TEAMDONATE_CANCEL_RETURN_LABEL" description="MOD_TEAMDONATE_CANCEL_RETURN_DESC"/>
+                <field name="image_url" type="text" size="64" default="http://www.mysite.com/pathto/logo"
+                       label="MOD_TEAMDONATE_COMPANY_LOGO_LABEL" description="MOD_TEAMDONATE_COMPANY_LOGO_DESC"/>
+                <field name="pp_image" type="text" size="64"
+                       default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
+                       label="MOD_TEAMDONATE_PP_BUTTON_IMAGE_LABEL" description="MOD_TEAMDONATE_PP_BUTTON_IMAGE_DESC"/>
+
+                <field name="show_text" type="radio" default="1" label="MOD_TEAMDONATE_SHOW_INTRO_TEXT_LABEL"
+                       description="MOD_TEAMDONATE_SHOW_INTRO_TEXTDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="intro_text" type="textarea" rows="3" cols="35"
+                       default="Please consider supporting our efforts." label="MOD_TEAMDONATE_INTRO_TEXT_LABEL"
+                       description="MOD_TEAMDONATE_INTRO_TEXT_DESC"/>
+
+                <field name="business" type="text" size="32" default="email@website.com"
+                       label="MOD_TEAMDONATE_PP_CREDENTIALS_LABEL" description="MOD_TEAMDONATE_PP_CREDENTIALS_DESC"/>
+                <field name="item_name" type="text" size="64" default="Donate to website.com"
+                       label="MOD_TEAMDONATE_PP_DONATION_DESC_LABEL" description="MOD_TEAMDONATE_PP_DONATION_DESC_DESC"/>
+                <field name="locale" type="list" default="en_US" label="MOD_TEAMDONATE_PP_LANGUAGE_LABEL"
+                       description="MOD_TEAMDONATE_PP_LANGUAGE_DESC">
+                    <option value="en_US">en_US</option>
+                    <option value="it_IT">it_IT</option>
+                    <option value="de_DE">de_DE</option>
+                    <option value="fr_FR">fr_FR</option>
+                    <option value="es_ES">es_ES</option>
+                </field>
+
+                <field name="show_amount" type="radio" default="1" label="MOD_TEAMDONATE_SHOW_AMOUNT_FIELD_LABEL"
+                       description="MOD_TEAMDONATE_SHOW_AMOUNT_FIELD_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="amount" type="text" size="5" default="" label="MOD_TEAMDONATE_AMOUNT_LABEL" description="MOD_TEAMDONATE_AMOUNT_DESC"/>
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                        name="layout"
+                        type="modulelayout"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea" rows="3"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+            </fieldset>
+            
+        </fields>
+    </config>
+
+   
+
+</extension>

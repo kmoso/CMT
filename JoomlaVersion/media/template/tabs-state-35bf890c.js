@@ -1,0 +1,6 @@
+jQuery(function($){var loadTabs=function(){function saveActiveTab(href){if(activeTabsHrefs===null){activeTabsHrefs=[];}
+activeTabsHrefs.push(href);localStorage.setItem('active-tabs',JSON.stringify(activeTabsHrefs));}
+function activateTab(href){$('a[data-toggle="tab"][href="'+href+'"]').tab('show');}
+function hasTab(href){return $('a[data-toggle="tab"][href="'+href+'"]').length;}
+var activeTabsHrefs=JSON.parse(localStorage.getItem('active-tabs'));var $tabs=$('a[data-toggle="tab"]');$tabs.on('click',function(e){saveActiveTab($(e.target).attr('href'));});if(activeTabsHrefs!==null){$tabs.parent('.active').removeClass('active');$.each(activeTabsHrefs,function(index,tabHref){if(!hasTab(tabHref)){localStorage.removeItem('active-tabs');return true;}
+activateTab(tabHref);var seperatorIndex=tabHref.indexOf('-');if(seperatorIndex!==-1){var singular=tabHref.substring(0,seperatorIndex);var plural=singular+"s";activateTab(plural);}});}else{$tabs.parents('ul').each(function(index,ul){var href=$(ul).find('a').first().tab('show').attr('href');saveActiveTab(href);});}};setTimeout(loadTabs,100);});

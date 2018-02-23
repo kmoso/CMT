@@ -1,0 +1,34 @@
+/* Copyright (C) YOOtheme GmbH, http://www.gnu.org/licenses/gpl.html GNU/GPL */
+
+/* ========================================================================
+   Use this file to add custom CSS easily
+ ========================================================================== */
+.preloader {
+
+background: #fdbd00; /*Specify the background color*/
+
+}
+
+.preloader .loader {
+
+background: url("/JoomlaVersion/images/logo-loader.png") 50% 50% no-repeat #fdbd00; /*Specify the logo image path and the image background color*/
+
+}
+
+.tm-top-c-box.home-about {
+background: url(/JoomlaVersion/images/about-team-bg.jpg) 50% 50%; /*specify your image path*/
+}
+
+.donate-wrap {
+background: url(/JoomlaVersion/images/about-team-banner.jpg);/*specify your image path*/
+}
+
+/* Sección en donde aparecen los botones de redes sociales y los siguientes partidos */
+.bottom-wrapper {
+       padding: 10px 0 0;
+}
+
+/* Sección en donde aparece el menú de pie de página y el Copyright */
+.footer-wrap {
+    padding: 0;
+}

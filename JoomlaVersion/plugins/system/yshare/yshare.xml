@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>plg_yshare</name>
+	<author>Buyanov Danila</author>
+	<creationDate>Jan 2013</creationDate>
+	<copyright>Copyright (C) 2005 - 2012 Buyanov Danila. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@saity74.ru</authorEmail>
+	<authorUrl>www.saity74.ru</authorUrl>
+	<version>1.0</version>
+	<description>PLG_YSHARE_DESC</description>
+	<files>
+		<filename plugin="yshare">yshare.php</filename>
+		<filename>index.html</filename>
+	</files>
+    <languages folder="language">
+            <language tag="en-GB">en-GB/en-GB.plg_system_yshare.ini</language>
+            <language tag="en-GB">en-GB/en-GB.plg_system_yshare.sys.ini</language>
+            <language tag="ru-RU">ru-RU/ru-RU.plg_system_yshare.ini</language>
+            <language tag="ru-RU">ru-RU/ru-RU.plg_system_yshare.sys.ini</language>
+    </languages>
+    <config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="type" type="radio"
+				default="0"
+				description="PLG_SYSTEM_YSHARE_TYPE_DESC"
+				label="PLG_SYSTEM_YSHARE_TYPE_LABEL"
+			>
+				<option value="button">YSHARE_TYPE_BUTTON</option>
+				<option value="link">YSHARE_TYPE_LINK</option>
+				<option value="icon">YSHARE_TYPE_ICON</option>
+				<option value="none">YSHARE_TYPE_NONE</option>
+			</field>
+			<field name="services" type="checkboxes"
+				default="0"
+				description="PLG_SYSTEM_YSHARE_SERVICES_DESC"
+				label="PLG_SYSTEM_YSHARE_SERVICES_LABEL"
+			>
+				<option value="yaru">YSHARE_TYPE_YARU</option>
+				<option value="vkontakte">YSHARE_TYPE_VK</option>
+				<option value="facebook">YSHARE_TYPE_FB</option>
+				<option value="twitter">YSHARE_TYPE_TWITTER</option>
+				<option value="odnoklassniki">YSHARE_TYPE_OK</option>
+				<option value="moimir">YSHARE_TYPE_MM</option>
+				<option value="friendfeed">YSHARE_TYPE_FF</option>
+				<option value="moikrug">YSHARE_TYPE_MK</option>
+				<option value="lj">YSHARE_TYPE_LJ</option>
+				<option value="gplus">YSHARE_TYPE_GP</option>
+				<option value="pinterest">YSHARE_TYPE_PINTEREST</option>
+				<option value="surfingbird">YSHARE_TYPE_SG</option>
+				
+				<option value="linkedin">YSHARE_TYPE_LI</option>
+				<option value="digg">YSHARE_TYPE_DIGG</option>
+				<option value="evernote">YSHARE_TYPE_EVERNOTE</option>
+				<option value="delicious">YSHARE_TYPE_DELICIOUS</option>
+				<option value="diary">YSHARE_TYPE_DIARY</option>
+				<option value="juick">YSHARE_TYPE_JUICK</option>
+				<option value="liveinternet">YSHARE_TYPE_LINET</option>
+				<option value="tutby">YSHARE_TYPE_TUTBY</option>
+				<option value="yazakladki">YSHARE_TYPE_YZ</option>
+			</field>
+		</fieldset>
+    	</fields>
+    </config>
+	<updateservers>
+		<server type="extension" name="Fancy Links">http://saity74.ru/updates/yshare/extension.xml</server>
+	</updateservers>
+</extension>
+

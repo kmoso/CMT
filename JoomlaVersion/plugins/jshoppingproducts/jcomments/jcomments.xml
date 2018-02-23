@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7.0" type="plugin" method="upgrade" group="jshoppingproducts">
+	<name>JoomShopping JComments Plugin</name>
+	<creationDate>12.03.2012</creationDate>
+	<version>2.0.2</version>
+	<author>MAXXmarketing GmbH</author>
+	<authorEmail>marketing@maxx-marketing.net</authorEmail>
+	<authorUrl></authorUrl>
+	<copyright>MAXXmarketing GmbH</copyright>
+	<license>MAXXmarketing</license>
+	<description>Add JComments into JoomShopping products</description>
+	<files>
+		<filename plugin="jcomments">jcomments.php</filename>
+	</files>
+	<config>
+	</config>
+</extension>
