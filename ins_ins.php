@@ -354,6 +354,7 @@
 								// Subiendo comprobante
 								$vc_TargetDir = "uploads/";
 								$va_Acceptable = array(
+								'application/pdf',
 								'image/jpeg',
 								'image/jpg',
 								'image/gif',
