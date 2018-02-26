@@ -2,7 +2,7 @@
 	include("dbconfig.php");
 	session_start();
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -40,7 +40,7 @@
 				$vc_Html = '';
 				$vc_Html.='<br><br><input type="hidden" name="tb_contador" id="tb_contador" value="'.$vn_Contador.'">';
 				$vc_Html.='<table class="seleccion">';
-				$vc_Html.='<tr class="encabezado"><td colspan="2">Validaci&oacute;n de informaci&oacute;n</td></tr>';
+				$vc_Html.='<tr class="encabezado"><td colspan="2" align="center">Validaci&oacute;n de informaci&oacute;n</td></tr>';
 				$vc_Html.='<tr><td align="right"><b>¿Ya has jugado torneos del circuito?:</b></td><td>';
 				$vc_Html.='<select id="ddl_jug_cmt" name="ddl_jug_cmt">';
 				$vc_Html.='<option value="1">S&iacute;</option>';
