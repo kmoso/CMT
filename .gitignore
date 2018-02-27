@@ -5,3 +5,5 @@ imgs/
 JoomlaVersion/
 uploads/
 backup/
+analytics_tracking.php
+dbconfig.php
