@@ -98,13 +98,9 @@ table.inscripcion {
 
 table tr.encabezado { font-weight: bold; font-size: 1.5em; }
 
-<<<<<<< HEAD
 table.seleccion { margin: 0 auto; padding: 45px 0 0 0; background: #666666;}
 
 table.avisos {  margin: 0 auto; background: #a3a3a3;}
-=======
-table.seleccion { margin: 0 auto; padding: 45px 0 0 0; background: #252525;}
->>>>>>> 413c30e65dea5e9f1f08aa815fc363b9ad3ef3bc
 
 table.edit_grid {
 	margin: 0 auto;
