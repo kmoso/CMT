@@ -43,7 +43,7 @@
 					$vc_Sql = "select tor_id as id, tor_nombre as descr ";
 					$vc_Sql.="from cmt_tor_torneos ";
 					$vc_Sql.="where 1 = 1 ";
-					//$vc_Sql.="and tor_activo = 'S' ";
+					$vc_Sql.="and tor_activo = 'S' ";
 					$vc_Sql.="order by case id when ".$vn_Tor_Id." then 0 else 1 end, tor_activo desc, tor_orden, id";
 					$vr_ResultSet=mysqli_query($vc_DbConfig,$vc_Sql);
 					if (!$vr_ResultSet) {
@@ -67,7 +67,7 @@
 					$vc_Sql = "select cat_id as id, cat_nombre as descr, cat_orden, count(1) as tot_inscritos ";
 					$vc_Sql.= "from cmt_cat_categorias, cmt_ins_inscripciones ";
 					$vc_Sql.= "WHERE 1 = 1 ";
-					$vc_Sql.= "AND ins_tor_id = ".$vn_Tor_Id." ";
+//					$vc_Sql.= "AND ins_tor_id = ".$vn_Tor_Id." ";
 					$vc_Sql.= "AND ins_cat_id = cat_id ";
 					$vc_Sql.= "AND ins_inscrito = 'S' ";
 					$vc_Sql.= "GROUP BY cat_id, cat_nombre, cat_orden ";

@@ -159,7 +159,7 @@
 					$vc_Sql.="               ) ";
 				}
 				$vc_Sql.="and sysdate() between cxt_fch_ini_inscripciones and date_add(cxt_fch_fin_inscripciones, interval 1 day) ";
-				$vc_Sql.="order by cxt_fch_ini_inscripciones, tor_fch_inicio, cat_puntos_max, case cat_id when ".$vn_Cat_Id." then 0 else cat_orden end, cat_id, tor_id";
+				$vc_Sql.="order by tor_orden, cxt_fch_ini_inscripciones, tor_fch_inicio, cat_puntos_max, case cat_id when ".$vn_Cat_Id." then 0 else cat_orden end, cat_id, tor_id";
 				$vr_ResultSet=mysqli_query($vc_DbConfig,$vc_Sql);
 				if (!$vr_ResultSet) {
 					$vc_Mensaje = '<font color="yellow">Error: '.mysqli_error($vc_DbConfig).' ejecutando '.$vc_Sql.' Contacta al administrador del sitio<br></font>';
@@ -184,10 +184,10 @@
 				$vc_Html.='<tr><td class="button" colspan="2"><input type="submit" value="Inscribirse"></td></tr>';
 				$vc_Html.='</table>';
 
-				$vc_Html.='<table align="center">';
+				$vc_Html.='<table class="avisos">';
 				$vc_Html.='<tr>';
 				$vc_Html.='<td width="33%"><a href="/docs/ReglamentoCircuitoMexicanoDeTenis.pdf" download>Lee nuestro reglamento</a></td>';
-				$vc_Html.='<td width="33%"><a href="/docs/PeticionesDeHorario.pdf" download>Peticiones de Horario</a></td>';
+				$vc_Html.='<td width="33%"><a href="/docs/PeticionesDeHorario.pdf" download>Peticiones de horario</a></td>';
 				$vc_Html.='<td width="33%"><b>*Todos los datos son obligatorios</b></td></tr>';
 				$vc_Html.='</table>';
 
@@ -406,14 +406,21 @@
 										$vc_Alert = $vc_Nombre.', tu número de inscripción es '.$vn_Ins_Id.', consérvala para identificar tu pago. Da click para continuar.';
 //										printf("%s",$vc_Mensaje);
 										$vc_To = $vc_Email;
-										$vc_EmailSubject = "Inscripción CMT al torneo ".$vc_NombreTorneo.", categoría ".$vc_NombreCategoria;
-										$vc_EmailBody = "Hola ".$vc_Nombre."\nTu inscripción ".$vn_Ins_Id." fue confirmada\n";
-										$vc_EmailBody.="Suerte en el torneo!\n\n";
-										$vc_EmailBody.="--\n";
-										$vc_EmailBody.="Organización,\n";
-										$vc_EmailBody.="Circuito Mexicano de Tenis\n";
+										$vc_EmailSubject = "Inscripcion CMT al torneo ".$vc_NombreTorneo.", categoria ".$vc_NombreCategoria;
+										$vc_EmailBody = '<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body><div><p>';
+										$vc_EmailBody.= "Hola ".$vc_Nombre."<br>Tu inscripción ".$vn_Ins_Id." fue confirmada<br>";
+										$vc_EmailBody.="<br><b>Suerte en el torneo!</b><br><br>";
+										$vc_EmailBody.='Consulta nuestro <a href="http://www.cmt.com.mx/docs/ReglamentoCircuitoMexicanoDeTenis.pdf">reglamento vigente</a><br>';
+										$vc_EmailBody.= 'y las <a href="http://www.cmt.com.mx/docs/PeticionesDeHorario.pdf">condiciones generales para peticiones de horario.</a><br></p>';
+										$vc_EmailBody.="--<br>";
+										$vc_EmailBody.="Organización,<br>";
+										$vc_EmailBody.="Circuito Mexicano de Tenis<br>";
 										$vc_EmailBody.="Tel. 55 2909 5388";
-										$vc_EmailHeaders = "From: atencion.jugadores@cmt.com.mx\r\n"."Bcc: atencion.jugadores@cmt.com.mx\r\n"."X-Mailer: php";
+										$vc_EmailBody.= '</div></body></html>';
+										$vc_EmailHeaders = "From: atencion.jugadores@cmt.com.mx\r\n";
+										$vc_EmailHeaders.= "Bcc: atencion.jugadores@cmt.com.mx\r\n";
+										$vc_EmailHeaders.= "X-Mailer: php\r\n";
+										$vc_EmailHeaders.= "Content-Type: text/html; charset=UTF-8\r\n";
 										if (mail($vc_To, $vc_EmailSubject, $vc_EmailBody, $vc_EmailHeaders))
 											$vc_Mensaje.= 'Correo de confirmaci&oacute;n enviado.';
 										else

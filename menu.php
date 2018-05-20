@@ -4,7 +4,7 @@
 						<a title="Administraci&oacute;n" aria-haspopup="true" href="#">Administraci&oacute;n</a>
 						<ul>
 							<li>
-								<a title="C&oacute;digos" href="sel_cod.php">C&oacute;digos</a>
+								<a title="Configuraci&oacute;n" href="sel_cod.php">Configuraci&oacute;n</a>
 							</li>
 							<li>
 								<a title="Documentos" href="sel_doc.php">Documentos</a>

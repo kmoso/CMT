@@ -19,17 +19,36 @@
 ?>
 			<form name="InsForm" onsubmit="validaForma()" method="POST" accept-charset="utf-8" enctype="multipart/form-data" >
 <?php
+			// Código para obtener el costo default por torneo
+			$vc_Sql ="select par_valor ";
+			$vc_Sql.="from cmt_par_parametros ";
+			$vc_Sql.="where par_nombre = 'COSTO_DFLT_TORNEO' ";
+			$vc_Sql.="and par_orden = 1 ";
+			
+			$vr_ResultSet=mysqli_query($vc_DbConfig,$vc_Sql);
+			if (!$vr_ResultSet) {
+				$vc_Mensaje = '<font color="yellow">Error: '.mysqli_error($vc_DbConfig).' ejecutando '.$vc_Sql.'<br>Contacta al administrador del sitio<br></font>';
+				printf("%s\n",$vc_Mensaje);
+				exit(1);
+			}
+//			else echo $vc_Sql;
+
+			while($vR_SelCosto = mysqli_fetch_assoc($vr_ResultSet))
+			{
+				$vn_CostoDflt = $vR_SelCosto['par_valor'];
+			}
+
 			// Asignando valores
 			$vc_Html = '';
 			$vc_Html.='<table class="seleccion">';
-			$vc_Html.='<tr class="encabezado"><td colspan="2">Mantenimiento de c&oacute;digos</td></tr>';
+			$vc_Html.='<tr class="encabezado"><td colspan="2">Configuraci&oacute;n</td></tr>';
 			$vc_Html.='</table>';
 			$vc_Html.='<div class="main_grid">';
 			$vc_Html.='<table class="grid">';
+/* Inicia CaMo 20180519 Se comenta el código para generación de códigos para inscripción
 			$vc_Html.='<tr class="grid0">';
 			$vc_Html.='<td align="center"><b>C&oacute;digo</b></td>';
 			$vc_Html.='<td align="center"><b>Fch Vencimiento</b></td></tr>';
-
 			// Información de Códigos
 			$vc_Sql ="select cod_id as id, cod_codigo as nombre, cod_fch_vencimiento as vencimiento ";
 			$vc_Sql.="from cmt_cod_codigos ";
@@ -63,6 +82,10 @@
 				$vc_Grid.='</tr>';
 				$vn_TotCodigos++;
 			}
+Termina CaMo 20180519 */
+			$vn_TotCodigos = 0;
+			$vc_Grid ='<tr><td align="right"><b>Indica el costo de la siguiente etapa:</b></td><td>';
+			$vc_Grid.='<input type="text" name="tb_costo" size="10" value="'.$vn_CostoDflt.'"></td></tr>';
 			$vc_Grid.='<tr><td align="right"><b>Nueva imagen de fondo (1080x600):</b></td><td>';
 			$vc_Grid.='<input type="file" name="tf_background_upload" accept=".png"></td></tr>';
 			$vc_Grid.='<tr><td align="right"><b>Nueva imagen de fondo para celulares (430x240):</b></td>';
@@ -78,6 +101,9 @@
 			printf("%s\n",$vc_Html);
 
 			if($_SERVER["REQUEST_METHOD"] == "POST") {
+				if (!isset($_POST['tb_costo'])) $vn_Costo = $vn_CostoDflt;
+				else $vn_Costo=$_POST['tb_costo'];
+
 				if (!isset($_POST['tb_tot_codigos'])) $vn_TotCodigos = 0;
 				else $vn_TotCodigos=$_POST['tb_tot_codigos'];
 
@@ -135,6 +161,7 @@
 
 				$vc_Mensaje = '<div class="mensaje">';
 				if ( $vc_TargetFile!=NULL ) $vc_Mensaje.='Im&aacute;genes actualizadas<br>';
+/* Inicia CaMo 20180519 Se comenta el código para generación de códigos para inscripción
 				if ( $vn_TotCodigos > 9 ) {
 					$vc_Sql="delete from cmt_cod_codigos ";
 					$vc_Sql.="where 1 = 1 ";
@@ -183,6 +210,33 @@
 					$vc_Mensaje.='</div>';
 					printf("%s\n",$vc_Mensaje);
 				}
+Termina CaMo 20180519 */
+
+				// Código para actualizar el costo default para torneos
+
+				if ( $vn_Costo != $vn_CostoDflt ) {
+					// Actualizando datos del torneo
+					$vc_Sql ="update cmt_par_parametros ";
+					$vc_Sql.="set par_valor = ".$vn_Costo." ";
+					$vc_Sql.="where par_nombre = 'COSTO_DFLT_TORNEO' ";
+					$vc_Sql.="and par_orden = 1 ";				
+					if (mysqli_query($vc_DbConfig, $vc_Sql)) {
+						$vc_Mensaje ='<div class="mensaje">Costo del torneo actualizado.';
+						$vc_Mensaje.='<br><a href="sel_cod.php">Regresar</a></div>';
+						printf("%s\n",$vc_Mensaje);
+					}
+					else {
+						$vc_Mensaje = $vc_HeaderMensaje.'Error: '.mysqli_error($vc_DbConfig).' ejecutando '.$vc_Sql.'<br>Contacta al administrador del sitio<br></font>';
+						printf("%s\n",$vc_Mensaje);
+						exit(1);
+					}
+				}
+				else {
+					$vc_Mensaje ='<div class="mensaje">Sin cambios en costo de torneo';
+					$vc_Mensaje.='<br><a href="sel_cod.php">Regresar</a></div>';
+					printf("%s\n",$vc_Mensaje);
+				}
+
 			}
 		
 ?>
